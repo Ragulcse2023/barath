@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+       @keyframes gradient {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+    body {
+        /* Create a linear gradient from top (light green) to bottom (dark green) */
+        background: linear-gradient(120deg, #e0f2f1 0%, #a5d6a7 100%);
+        
+        /* Set the background size to double the size to allow for movement */
+        background-size: 200% 200%;
+        
+        /* Apply the animation */
+        animation: gradient 5s ease infinite;
+        
+        /* Ensure the background image covers the entire page */
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+        .glow-on-hover {
+            transition: color 0.3s;
+        }
+
+        .glow-on-hover:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+        }
+        .navbar {
+            background-color: #000000; /* Change this to match Apple's black */
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark ">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white glow-on-hover" th:href="@{/}"><i
+				class="fas fa-paw"></i></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a
+						class="nav-link text-white glow-on-hover"
+						th:href="@{/VisitorView}">View Visitors</a></li>
+					<li class="nav-item"><a
+						class="nav-link text-white glow-on-hover"
+						th:href="@{/VisitorEditPage}">Edit Visitors</a></li>
+						        
+				</ul>
+				<div>
+					<a class="btn btn-primary glow-on-hover" href="/AddVisitor">Add
+						New Visitor</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container my-5 p-5">
+		<h4 class="text-center">Edit Visitor Details</h4>
+		<form class="col-md-4 offset-md-4" th:action="@{/saveVisitor}"
+			method="post" th:object="${visitor}" id="visitorForm">
+			<input type="hidden" name="id" th:value="${visitor.id}">
+			<div class="mb-3">
+				<label for="id" class="form-label">Id</label> <input type="text"
+					readonly class="form-control" id="id" name="Id" th:field="*{id}"
+					title="ID should not be empty">
+				<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+					class="alert alert-danger">ID Error</div>
+			</div>
+			<div class="mb-3">
+				<label for="name" class="form-label">Name</label> <input type="text"
+					class="form-control" id="name" name="name" th:field="*{name}">
+				<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+					class="alert alert-danger">Name Error</div>
+			</div>
+			<div class="mb-3">
+				<label for="groupsize" class="form-label">Group Size</label> <input
+					type="number" class="form-control" id="groupsize"
+					th:field="*{groupsize}" >
+				<div th:if="${#fields.hasErrors('groupsize')}"
+					th:errors="*{groupsize}" class="alert alert-danger">Group
+					Size Error</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label> <input
+					type="email" class="form-control" id="email" name="email"
+					th:field="*{email}">
+				<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+					class="alert alert-danger">Email Error</div>
+			</div>
+			<div class="mb-3">
+				<label for="visitDate" class="form-label">Visit Date</label> <input
+					type="date" class="form-control" id="visitDate" required
+					th:field="*{visitDate}">
+				
+			</div>
+			<center>
+				<button type="submit" class="btn btn-primary">Save Changes</button>
+			</center>
+		</form>
+	</div>
+
+
+	<script>
+		document.getElementById('visitorForm')
+				.addEventListener(
+						'submit',
+						function(event) {
+							event.preventDefault(); // prevent the form from submitting
+							var groupSize = document
+									.getElementsByName('groupsize')[0].value;
+							var cost = groupSize * 500;
+							alert('The cost of the visit is ' + cost);
+							event.currentTarget.submit(); // submit the form manually
+						});
+		
+		document.getElementById('visitDate').addEventListener('change', function() {
+		    var inputDate = new Date(this.value);
+		    var inputYear = inputDate.getFullYear();
+
+		    // Get today's date and set hours, minutes, seconds and milliseconds to 0
+		    var today = new Date();
+		    today.setHours(0, 0, 0, 0);
+
+		    if(inputDate.getTime() < today.getTime() || inputYear > 2024){
+		        alert("The date is not valid. It should be a future date and the year should not exceed 2024.");
+		        this.value = '';
+		    }
+		});
+
+	</script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

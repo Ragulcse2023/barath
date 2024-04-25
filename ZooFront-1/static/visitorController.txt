@@ -1,0 +1,40 @@
+2024-04-11T11:50:00.694+05:30  INFO 20724 --- [restartedMain] com.example.demo.ZooFront1Application    : Starting ZooFront1Application using Java 17.0.2 with PID 20724 (C:\Users\2318290\Documents\Sprint2\ZooFront-1\target\classes started by 2318290 in C:\Users\2318290\Documents\Sprint2\ZooFront-1)
+2024-04-11T11:50:00.695+05:30  INFO 20724 --- [restartedMain] com.example.demo.ZooFront1Application    : No active profile set, falling back to 1 default profile: "default"
+2024-04-11T11:50:00.966+05:30  INFO 20724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-11T11:50:00.997+05:30  INFO 20724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.
+2024-04-11T11:50:01.135+05:30  INFO 20724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-11T11:50:01.137+05:30  INFO 20724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-11T11:50:01.137+05:30  INFO 20724 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-11T11:50:01.179+05:30  INFO 20724 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-11T11:50:01.179+05:30  INFO 20724 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 481 ms
+2024-04-11T11:50:01.223+05:30  INFO 20724 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-11T11:50:01.227+05:30  INFO 20724 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-11T11:50:01.234+05:30  INFO 20724 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-11T11:50:01.236+05:30  INFO 20724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-11T11:50:01.257+05:30  INFO 20724 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e47c480
+2024-04-11T11:50:01.257+05:30  INFO 20724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-04-11T11:50:01.258+05:30  WARN 20724 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-11T11:50:01.258+05:30  WARN 20724 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-04-11T11:50:01.366+05:30  INFO 20724 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-11T11:50:01.381+05:30  INFO 20724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-11T11:50:01.535+05:30  WARN 20724 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-11T11:50:01.679+05:30  INFO 20724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-11T11:50:01.693+05:30  INFO 20724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-11T11:50:01.699+05:30  INFO 20724 --- [restartedMain] com.example.demo.ZooFront1Application    : Started ZooFront1Application in 1.033 seconds (process running for 367.045)
+2024-04-11T11:50:01.701+05:30  INFO 20724 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-11T11:50:07.075+05:30  INFO 20724 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-11T11:50:07.075+05:30  INFO 20724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-11T11:50:07.077+05:30  INFO 20724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-11T11:50:07.079+05:30  INFO 20724 --- [http-nio-8080-exec-1] c.e.demo.controller.VisitorController    : Handling /VisitorView request
+2024-04-11T11:50:07.642+05:30  INFO 20724 --- [http-nio-8080-exec-2] c.e.demo.controller.VisitorController    : Handling /VisitorEditPage request
+2024-04-11T11:50:08.142+05:30  INFO 20724 --- [http-nio-8080-exec-3] c.e.demo.controller.VisitorController    : Handling /VisitorView request
+2024-04-11T11:50:09.064+05:30  INFO 20724 --- [http-nio-8080-exec-4] c.e.demo.controller.VisitorController    : Handling /VisitorEditPage request
+2024-04-11T11:50:09.608+05:30  INFO 20724 --- [http-nio-8080-exec-5] c.e.demo.controller.VisitorController    : Handling /VisitorView request
+2024-04-11T11:50:10.105+05:30  INFO 20724 --- [http-nio-8080-exec-6] c.e.demo.controller.VisitorController    : Handling /VisitorEditPage request
+2024-04-11T11:50:10.473+05:30  INFO 20724 --- [http-nio-8080-exec-7] c.e.demo.controller.VisitorController    : Handling /VisitorView request
+2024-04-11T11:50:12.547+05:30  INFO 20724 --- [http-nio-8080-exec-9] c.e.demo.controller.VisitorController    : Handling /visitor request
+2024-04-11T11:50:13.052+05:30  INFO 20724 --- [http-nio-8080-exec-10] c.e.demo.controller.VisitorController    : Handling /VisitorView request
+2024-04-11T11:56:46.951+05:30  INFO 20724 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-11T11:56:46.960+05:30  INFO 20724 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-11T11:56:46.961+05:30  INFO 20724 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-04-11T11:56:46.970+05:30  INFO 20724 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
